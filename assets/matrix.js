@@ -158,36 +158,46 @@ $(function() {
       let angriff = Number($(this).data("angriff"));
       let technik = Number($(this).data("technik"));
       let kyu = $(this).data("kyu");
-      $(this).data("kyu", kyu).attr("title", "missing").addClass("missing").html(kyu);
+      let isKyu0 = (kyu == 0);
+      let displayVal = isKyu0 ? '0' : kyu;
 
+      // Reset cell to default state
+      $(this).html(displayVal).removeClass('kyu-0-linked missing').removeAttr('title');
+      if (!isKyu0) {
+        $(this).attr('title', 'missing').addClass('missing');
+      }
+
+      // Apply URL / youtube link if one exists for this cell
       if (
         (typeof(m["urls"][angriff]) !== "undefined") &&
         (typeof(m["urls"][angriff][technik]) !== "undefined")
       ) {
-        let $a = false;
+        let urlData = m["urls"][angriff][technik];
+        let url = (typeof(urlData["url"]) !== "undefined" && urlData["url"].length > 0)
+          ? urlData["url"]
+          : false;
 
-        let url =
-          ((typeof(m["urls"][angriff][technik]["url"]) !== "undefined") && m["urls"][angriff][technik]["url"].length > 0)
-            ? m["urls"][angriff][technik]["url"]
-            : false;
-      
-        if (url || (typeof(m["urls"][angriff][technik]["youtube"]) !== "undefined")) {
-         $a = $(
-          '<a ' +
-            'title="' + m["urls"][angriff][technik]["label"] + ' (' + kyu + '. kyu)" ' +
-            'target="_blank" class="kyu desktop">' +
-            kyu +
-          '</a>'
+        if (url || (typeof(urlData["youtube"]) !== "undefined")) {
+          let titleText = urlData["label"] + (isKyu0 ? '' : ' (' + kyu + '. kyu)');
+          let $a = $(
+            '<a ' +
+              'title="' + titleText + '" ' +
+              'target="_blank" class="kyu desktop">' +
+              displayVal +
+            '</a>'
           );
-
           $a
-            .data("youtube", m["urls"][angriff][technik]["youtube"])
+            .data("youtube", urlData["youtube"])
             .data("desktop", 1)
             .data("url", url)
-            .data("label", m["urls"][angriff][technik]["label"]);
+            .data("label", urlData["label"]);
 
-          $(this).html($a);
-          $(this).removeClass("missing").attr("title", m["urls"][angriff][technik]["label"]);
+          $(this).html($a).attr("title", urlData["label"]);
+          if (isKyu0) {
+            $(this).addClass('kyu-0-linked');
+          } else {
+            $(this).removeClass('missing');
+          }
         }
       }
     });
@@ -197,31 +207,30 @@ $(function() {
         return;
       }
       let youtube = $(this).data("youtube");
-      let $iframe = '';
 
       let url = '';
       if (typeof(youtube) !== "undefined" && youtube) {
-        url = "https://www.youtube.com/embed/" + youtube.video + "?autoplay=1&mute=1&controls=1";
-        url += "&start=" + youtube.time[0];
-        if (youtube.time[1]) {
-          url += "&end=" + youtube.time[1];
+        let src = "https://www.youtube.com/embed/" + youtube.video
+          + "?autoplay=1&mute=1&start=" + youtube.time[0]
+          + (youtube.time[1] ? "&end=" + youtube.time[1] : "");
+        let $iframe = '<iframe width="100%" height="100%" src="' + src + '" frameBorder="0" allow="autoplay" allowfullscreen></iframe>';
+        let $dlg = $("div#youtube");
+        $(".modal-title", $dlg).html($(this).data("label"));
+        $(".modal-body").empty().append($iframe);
+        if ($(this).data("desktop")) {
+          $dlg.show();
+        } else {
+          $dlg.modal('toggle');
         }
-
-        $iframe =
-          '<iframe width="100%" height="100%" src="' + url + '"' +
-          '   frameBorder="0" ' +
-          '   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen>' +
-          '</iframe>'
-        ;
-      } else {
-        url = $(this).data('url');
-        $iframe = '<iframe width="100%" height="100%" src="' + url + '" frameBorder="0" </iframe>';
+        return;
       }
-      let $dlg = $("div#youtube");
 
+      // Non-YouTube URL
+      url = $(this).data('url');
+      let $iframe = '<iframe width="100%" height="100%" src="' + url + '" frameBorder="0"></iframe>';
+      let $dlg = $("div#youtube");
       $(".modal-title", $dlg).html($(this).data("label"));
       $(".modal-body").empty().append($iframe);
-
       if ($(this).data("desktop")) {
         $dlg.show();
       } else {
@@ -241,5 +250,5 @@ $(function() {
     let $dlg = $("div#youtube");
     $(".modal-body").empty();
     $dlg.hide();
-  })
+  });
 })

@@ -7,6 +7,8 @@
 body { font-family: Arial, Helvetica, sans-serif; }
 h1 { font-size: 0.9em; }
 
+.kyu-0 { background-color: #cccccc; color: #333; }
+.kyu-0-linked { background-color: #222222; color: white; }
 .kyu-1 { background-color: #996633; }
 .kyu-2 { background-color: #0099FF; }
 .kyu-3 { background-color: #00FF00; }
@@ -32,7 +34,7 @@ td.version {
   vertical-align: bottom;
 }
 
-td[data-angriff="7"], td[data-angriff="11"], td[data-angriff="23"], .eof {
+td[data-angriff="7"], td[data-angriff="11"], td[data-angriff="23"], td[data-angriff="28"], .eof {
   border-right: 0.2em solid black !important;
 }
 
@@ -80,6 +82,13 @@ td a, td a:visited {
   display: block;
   padding: 10px;
   margin: -10px;
+}
+
+td.kyu-0 a, td.kyu-0 a:visited {
+  color: #333;
+}
+td.kyu-0-linked a, td.kyu-0-linked a:visited {
+  color: white;
 }
 
 span.sources {
