@@ -239,18 +239,10 @@ matrix.push({
         }
       },
       2: {
-        "label": "hanmi handachi waza - shomen uchi - nikyo",
-        "youtube": {
-          "video": "J8MpnscyjtA",
-          "time": [0, 0]
-        }
+        "label": "hanmi handachi waza - shomen uchi - nikyo"
       },
       3: {
-        "label": "hanmi handachi waza - shomen uchi - sankyo",
-        "youtube": {
-          "video": "bRc-UjpA0Jk",
-          "time": [0, 0]
-        }
+        "label": "hanmi handachi waza - shomen uchi - sankyo"
       },
       4: {
         "label": "hanmi handachi waza - shomen uchi - yonkyo"
@@ -1193,6 +1185,16 @@ matrix.push({
         "youtube" : {
           "video" : "uZmv-dtfz3g",
           "time" : [2, 0]
+        }
+      }
+    },
+
+    31 : {
+      9 : {
+        "label" : "tanto dori - yokomen uchi hon-te - shiho nage",
+        "youtube" : {
+          "video" : "rMkDuYwXsGo",
+          "time" : [21, 0]
         }
       }
     },

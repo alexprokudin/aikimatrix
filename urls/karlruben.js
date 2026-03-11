@@ -243,7 +243,7 @@ matrix.push({
         "label": "hanmi handachi waza - shomen uchi - ikkyo",
         "youtube": {
           "video": "u8WD-0W-pP4",
-          "time": [310, 0]
+          "time": [365, 408]
         },
       },
       2: {
