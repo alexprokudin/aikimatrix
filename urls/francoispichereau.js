@@ -1161,6 +1161,103 @@ matrix.push({
           "time": [0, 0]
         }
       }
+    },
+
+    29 : {
+      6 : {
+        "label" : "tanto dori - shomen uchi guaku-te - hiji kime osae",
+        "youtube" : {
+          "video" : "ZJNysyTLYtc",
+          "time" : [2, 0]
+        }
+      }
+    },
+
+    30 : {
+      5 : {
+        "label" : "tanto dori - shomen uchi gyaku-te - gokyo",
+        "youtube" : {
+          "video" : "jaBjyrGxzR4",
+          "time" : [2, 0]
+        }
+      },
+      8 : {
+        "label" : "tanto dori - shomen uchi gyaku-te - kote gaeshi",
+        "youtube" : {
+          "video" : "DoA39JcbsZM",
+          "time" : [2, 0]
+        }
+      },
+      10 : {
+        "label" : "tanto dori - shomen uchi gyaku-te - irimi nage",
+        "youtube" : {
+          "video" : "uZmv-dtfz3g",
+          "time" : [2, 0]
+        }
+      }
+    },
+
+    32 : {
+      5 : {
+        "label" : "tanto dori - yokomen uchi gyaku-te - gokyo",
+        "youtube" : {
+          "video" : "WbLNDOMnhpM",
+          "time" : [2, 0]
+        }
+      },
+      8 : {
+        "label" : "tanto dori - yokomen uchi gyaku-te - kote gaeshi",
+        "youtube" : {
+          "video" : "ES6aUoF5WHw",
+          "time" : [2, 0]
+        }
+      },
+      9 : {
+        "label" : "tanto dori - yokomen uchi gyaku-te - shiho nage",
+        "youtube" : {
+          "video" : "rMkDuYwXsGo",
+          "time" : [2, 0]
+        }
+      },
+      10 : {
+        "label" : "tanto dori - yokomen uchi gyaku-te - irimi nage",
+        "youtube" : {
+          "video" : "Nm3im8BwN94",
+          "time" : [2, 0]
+        }
+      }
+    },
+
+    33 : {
+      1 : {
+        "label" : "tanto dori - chudan tsuki - ikkyo",
+        "youtube" : {
+          "video" : "bvREcxOU3xA",
+          "time" : [2, 0]
+        }
+      },
+      6 : {
+        "label" : "tanto dori - chudan tsuki - hiji kime osae",
+        "youtube" : {
+          "video" : "EVATmYcm10E",
+          "time" : [2, 0]
+        }
+      },
+      10 : {
+        "label" : "tanto dori - chudan tsuki - irimi nage",
+        "youtube" : {
+          "video" : "sgSyEL-foz0",
+          "time" : [2, 0]
+        }
+      },
+      22 : {
+        "label" : "tanto dori - chudan tsuki - uchi kayten sankyo",
+        "youtube" : {
+          "video" : "Xy_BIsbXAQE",
+          "time" : [2, 0]
+        }
+      }
     }
+
   }
 });
