@@ -1142,15 +1142,15 @@ matrix.push({
       8: {
         "label": "ushiro waza - ushiro katate dori kubi shime - kote gaeshi",
         "youtube": {
-          "video": "gp3ZwrZ-q_g",
-          "time": [0, 0]
+          "video": "gV5mMz73WCI",
+          "time": [2, 0]
         }
       },
       9: {
         "label": "ushiro waza - ushiro katate dori kubi shime - shiho nage",
         "youtube": {
-          "video": "HiLBy7oPDIc",
-          "time": [0, 0]
+          "video": "Zc6-_WX7RRY",
+          "time": [2, 0]
         }
       }
     },
